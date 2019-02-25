@@ -4,7 +4,7 @@
 #include "msg.h"
 #include "lurker.h"
 
-int32_t lurker_handle_request(lurker_object_t *objP,uint8_t *raw, uint16_t len)
+int32_t lurker_handle_request(lurker_object_t *objP,uint8_t *raw, uint16_t_t len)
 {
     int32_t ret = 0;
     msg_t msg;

@@ -19,6 +19,9 @@ struct _lurker_object_t
 
     lurker_read_callback_t read;
     lurker_write_callback_t write;
+
+    uint8_t *user_data;
+    uint16_t user_data_len;
 };
 
 #define lurker_malloc malloc
@@ -29,8 +32,10 @@ struct _lurker_object_t
                         } while (0)
 
 typedef enum _lurker_error_t{
-    LURKER_ERR_900 = 900,
-    LURKER_ERR_901 = 901,
+    LURKER_ERR_900 = 900, //invalid parameters
+    LURKER_ERR_901 = 901, //oom
     LURKER_ERR_902 = 902, //operation unsupported
+    LURKER_ERR_903 = 903, //parse user data failed
+    LURKER_ERR_904 = 904, //write data failed
 }lurker_error_t;
 #endif

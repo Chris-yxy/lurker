@@ -23,9 +23,10 @@ int32_t lurker_main()
         ret = connection_recv(buf, MAX_BUF_SIZE, TIMEOUT_MS);
 
         if (ret > 0) { //well receive something here
-            /* code */
+            ret = lurker_handle_request(object[0], buf, ret);
         }
 
+        lurker_delay(100);
     } while (1);
 
     out:
